@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Needit" max_length="40" name="x_58872_needit_needit" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Request_type" mandatory="true" max_length="40" name="u_request_type" type="string">
+            <choice>
+                <element label="HR" sequence="0" value="hr"/>
+                <element label="Facilities" sequence="1" value="facilities"/>
+                <element label="Legal" sequence="2" value="legal"/>
+                <element label="Departrment" sequence="3" value="departrment"/>
+            </choice>
+        </element>
+        <element label="Requested for" mandatory="true" max_length="32" name="u_requewsted_for" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="leg1" label="What needed" mandatory="true" max_length="40" name="u_what_needed" type="string">
+            <choice>
+                <element label="HR1" sequence="0" value="hr1"/>
+                <element label="HR2" sequence="1" value="hr2"/>
+                <element label="FAC1" sequence="2" value="fac1"/>
+                <element label="FAC2" sequence="3" value="fac2"/>
+                <element label="LEG1" sequence="4" value="leg1"/>
+                <element label="LEG2" sequence="5" value="leg2"/>
+                <element label="DEP1" sequence="6" value="dep1"/>
+                <element label="DEP2" sequence="7" value="dep2"/>
+            </choice>
+        </element>
+        <element label="When needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
+        <index name="index">
+            <element name="u_requewsted_for"/>
+        </index>
+    </element>
+</database>
