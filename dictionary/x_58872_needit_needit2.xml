@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element audit="true" extends="task" label="Needit2" max_length="40" name="x_58872_needit_needit2" sizeclass="5" type="collection">
+        <element choice="3" default="1" label="Number" mandatory="true" max_length="40" name="u_integer_1" type="integer">
+            <choice>
+                <element label="1" sequence="0" value="1"/>
+                <element label="2" sequence="1" value="2"/>
+                <element label="3" sequence="2" value="3"/>
+            </choice>
+        </element>
+        <element label="Request for" mandatory="true" max_length="32" name="u_request_fo" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="legal" label="Scope of Request" mandatory="true" max_length="40" name="u_request_type" type="string">
+            <choice>
+                <element label="Human Resources" sequence="0" value="hr"/>
+                <element label="Facilities" sequence="1" value="facilities"/>
+                <element label="Legal" sequence="2" value="legal"/>
+                <element label="IT Support" sequence="3" value="it_support"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="What needed" mandatory="true" max_length="40" name="u_what_needed" type="string" use_dependent_field="true">
+            <choice>
+                <element label="HR New Hire" sequence="0" value="Choice 1"/>
+                <element label="HR Leaver" sequence="1" value="Choice 2"/>
+                <element label="FAC Workplace" sequence="2" value="Choice 3"/>
+                <element label="FAC Office" sequence="3" value="fac office"/>
+                <element label="LEG Generic" sequence="4" value="leg generic"/>
+                <element label="LEG Contract" sequence="5" value="leg contract"/>
+                <element label="IT Generic" sequence="6" value="it generic"/>
+            </choice>
+        </element>
+        <element label="When needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
+    </element>
+</database>
