@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element audit="true" extends="task" label="Needit2" max_length="40" name="x_58872_needit_needit2" sizeclass="7" type="collection">
+    <element audit="true" extends="task" label="Needit2" max_length="40" name="x_58872_needit_needit2" sizeclass="23" type="collection">
         <element choice="3" default="1" label="Number" mandatory="true" max_length="40" name="u_integer_1" type="integer">
             <choice>
                 <element label="1" sequence="0" value="1"/>
@@ -9,6 +9,7 @@
             </choice>
         </element>
         <element attributes="edge_encryption_enabled=true" label="Other" max_length="40" name="u_other" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="email" max_length="40" name="u_requested_for_email" type="string"/>
         <element label="Request for" mandatory="true" max_length="32" name="u_request_fo" reference="sys_user" type="reference"/>
         <element attributes="edge_encryption_enabled=true" choice="1" default="legal" label="Scope of Request" mandatory="true" max_length="40" name="u_request_type" type="string">
             <choice>
@@ -20,7 +21,11 @@
         </element>
         <element attributes="edge_encryption_enabled=true" choice="1" label="What needed" mandatory="true" max_length="40" name="u_what_needed" type="string" use_dependent_field="true">
             <choice>
+                <element label="Facilities 1" sequence="0" value="Facilities 1"/>
                 <element label="HR New Hire" sequence="0" value="Choice 1"/>
+                <element label="Human Resources 2" sequence="0" value="Human Resources 2"/>
+                <element label="Legal 1" sequence="0" value="Legal 1"/>
+                <element label="Legal 2" sequence="0" value="Legal 2"/>
                 <element label="HR Leaver" sequence="1" value="Choice 2"/>
                 <element label="FAC Workplace" sequence="2" value="Choice 3"/>
                 <element label="FAC Office" sequence="3" value="fac office"/>
